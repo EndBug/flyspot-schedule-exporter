@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/chrome-manifest.json",
+  "manifest_version": 3,
+  "name": "Flyspot Schedule Export",
+  "description": "A Chromium extensions that lets you export sessions from the Flyspot booking system",
+  "version": "1.0.0",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {},
+  "permissions": ["scripting"],
+  "host_permissions": ["https://cs.flyspot.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://cs.flyspot.com/*"],
+      "js": ["content-script.js"]
+    }
+  ]
+}
