@@ -1,6 +1,6 @@
 const SHOW_AVAILABLE_ONLY = true;
 
-console.log('Flyspot Schedule Export enabled: listening for URL changes...');
+console.log('Flyspot Schedule Exporter enabled: listening for URL changes...');
 
 let lastUrl = location.href;
 new MutationObserver(() => {
@@ -18,7 +18,7 @@ function onUrlChange() {
     url.hostname === 'cs.flyspot.com' &&
     url.searchParams.get('currentStep')?.startsWith('calendar-Minutes-')
   ) {
-    console.log('Flyspot Schedule Export: detected calendar view');
+    console.log('Flyspot Schedule Exporter: detected calendar view');
 
     appendExportButton();
   }
@@ -27,7 +27,7 @@ function onUrlChange() {
 function appendExportButton() {
   const exportButton = document.createElement('a');
   exportButton.setAttribute('class', 'cs-button cs-fluid-animation btn');
-  exportButton.textContent = 'Export Schedule';
+  exportButton.textContent = 'Exporter Schedule';
   exportButton.onclick = exportSchedule;
 
   const exportButtonContainer = document.querySelector(
@@ -94,11 +94,11 @@ function exportSchedule() {
         .join('\n')
     )
     .then(() => {
-      console.log('Flyspot Schedule Export: copied to clipboard');
+      console.log('Flyspot Schedule Exporter: copied to clipboard');
     })
     .catch(err => {
       console.error(
-        'Flyspot Schedule Export: failed to copy to clipboard',
+        'Flyspot Schedule Exporter: failed to copy to clipboard',
         err
       );
     });
