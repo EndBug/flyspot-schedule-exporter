@@ -1,0 +1,39 @@
+name: Release
+on:
+  release:
+    types: [published, edited]
+
+permissions:
+  contents: write
+
+jobs:
+  tags:
+    name: Update tags
+    runs-on: windows-2022
+    steps:
+      - uses: Actions-R-Us/actions-tagger@v2
+        with:
+          publish_latest_tag: true
+
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    if: ${{ github.event.action == 'published' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: echo "filename=clear-calendar-${{ github.event.release.tag_name }}.zip" >> $GITHUB_ENV
+      - uses: thedoctor0/zip-release@0.7.6
+        with:
+          filename: ${{ env.filename }}
+          path: dist
+      - uses: nanoufo/action-upload-artifacts-and-release-assets@v2.0
+        with:
+          path: ${{ env.filename }}
+          if-no-files-found: error
+          upload-release-files: true
+          release-upload-url: ${{ github.event.release.upload_url }}
