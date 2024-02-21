@@ -26,7 +26,7 @@ jobs:
           cache: yarn
       - run: yarn install --immutable
       - run: yarn run build
-      - run: echo "filename=clear-calendar-${{ github.event.release.tag_name }}.zip" >> $GITHUB_ENV
+      - run: echo "filename=flyspot-schedule-exporter-${{ github.event.release.tag_name }}.zip" >> $GITHUB_ENV
       - uses: thedoctor0/zip-release@0.7.6
         with:
           filename: ${{ env.filename }}
