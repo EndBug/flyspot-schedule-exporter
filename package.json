@@ -18,7 +18,7 @@
     "posttest": "yarn run lint"
   },
   "dependencies": {
-    "@types/chrome": "^0.0.260",
+    "@types/chrome": "^0.0.262",
     "@types/node": "^20.11.19",
     "gts": "^5.2.0",
     "rimraf": "^5.0.5",
