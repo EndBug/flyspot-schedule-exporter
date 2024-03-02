@@ -1,6 +1,6 @@
 {
   "name": "flyspot-schedule-exporter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Chromium extensions that lets you export sessions from the Flyspot booking system",
   "main": "index.js",
   "repository": "git@github.com:EndBug/flyspot-schedule-exporter.git",
