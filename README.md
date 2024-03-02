@@ -2,7 +2,7 @@
   <p>
     <!-- <img src="public/images/logo-1060.png" alt="extension logo" width="200" /> -->
   </p>
-  <h1>Clear Calendar</h1>
+  <h1>Flyspot Schedule Exporter</h1>
   <p>A Chromium extension that lets you turn off event titles in Google Calendar</p>
   <!-- <p>
     <a>

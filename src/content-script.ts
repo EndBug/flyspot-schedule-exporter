@@ -27,7 +27,7 @@ function onUrlChange() {
 function appendExportButton() {
   const exportButton = document.createElement('a');
   exportButton.setAttribute('class', 'cs-button cs-fluid-animation btn');
-  exportButton.textContent = 'Exporter Schedule';
+  exportButton.textContent = 'Export Schedule';
   exportButton.onclick = exportSchedule;
 
   const exportButtonContainer = document.querySelector(
