@@ -1,8 +1,10 @@
 /* eslint-disable node/no-unpublished-import */
-import manifest from '../public/manifest.json';
-import {writeFileSync} from 'fs';
+import {readFileSync, writeFileSync} from 'fs';
 
-// @ts-expect-error We want to strip the schema from the manifests
+const manifest = JSON.parse(readFileSync('public/manifest.json', 'utf-8'));
+import packageJson from '../package.json';
+
 delete manifest['$schema'];
+manifest.version = packageJson.version;
 
 writeFileSync('dist/manifest.json', JSON.stringify(manifest, null, 2));
