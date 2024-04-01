@@ -20,7 +20,7 @@
   "dependencies": {
     "@types/chrome": "^0.0.262",
     "@types/node": "^20.11.24",
-    "gts": "^5.2.0",
+    "gts": "^5.3.0",
     "rimraf": "^5.0.5",
     "tsx": "^4.7.1",
     "typescript": "^5.3.3"
