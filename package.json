@@ -13,9 +13,9 @@
     "clean": "gts clean src",
     "compile": "tsc",
     "fix": "gts fix",
-    "prepare": "yarn run compile",
-    "pretest": "yarn run compile",
-    "posttest": "yarn run lint"
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
   },
   "dependencies": {
     "@types/chrome": "^0.0.262",
