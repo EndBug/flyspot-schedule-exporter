@@ -21,7 +21,7 @@
     "@types/chrome": "^0.0.267",
     "@types/node": "^20.13.0",
     "gts": "^5.3.0",
-    "rimraf": "^5.0.5",
+    "rimraf": "^5.0.7",
     "tsx": "^4.8.2",
     "typescript": "^5.4.5"
   },
