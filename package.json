@@ -18,7 +18,7 @@
     "posttest": "npm run lint"
   },
   "dependencies": {
-    "@types/chrome": "^0.0.268",
+    "@types/chrome": "^0.0.269",
     "@types/node": "^22.0.2",
     "gts": "^5.3.1",
     "rimraf": "^5.0.7",
